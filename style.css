@@ -76,16 +76,16 @@ a{
     background-color: rgba(0,0,0,0.8);
 }
 .userCard{
-    
-    max-width:940px;
+    width: 940px;
     background-color: #fff;
-    position:absolute;
+    position: absolute;
     top:45%;
-    left:18%
-    
+    left:50%;
+    transform: translateX(-50%);
 }
 .userCard .pictureAndText{
     padding:50px;
+    
 }
 .userCard .picture{
     float:left;
