@@ -7,19 +7,73 @@ body{
     margin:0;
     padding:0;
 }
+a{
+    text-decoration: none;
+}
+ul{list-style: none;}
 .clearfix::after{
     content:'';
     display:block;
     clear:both;
+}
+body,html{height:100%}
+.siteWelcome{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;height:100%;
+    background-color: #888;
+    z-index:10;
+    display:none;
+    justify-content: center;
+    align-items: center;
+}
+.siteWelcome.active{
+    display:flex
+}
+.siteWelcome .loading{
+    height:200px;
+    width:200px;
+    position: relative;
+}
+.siteWelcome .loading::before,.loading::after{
+    content:'';
+    display:block;
+    animation: a 1.5s linear infinite;
+    position:absolute;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    margin:auto;
+}
+.siteWelcome .loading::after{
+    animation-delay: 0.75s
+}
+@keyframes a{
+    from{
+        height:0;width:0;border-radius: 50%;background-color: #000;opacity: 1;
+    }
+    to{
+        height:100px;width:100px;border-radius: 50%;background-color: #000;opacity: 0;
+    }
 }
 .topNavBar{
     position:fixed;
     top:0;
     left:0;
     width:100%;
+    z-index:4;
 }
 .topNavBar .topNavBar-inner{
     padding:20px 16px 20px 16px;
+    color:#b7b7b7;
+}
+.topNavBar .topNavBar-inner.active{
+    background-color: #fff;
+    padding:10px 16px;
+    box-shadow: 0 0 8px 3px rgba(0,0,0,0.2);
+    color:#666;
 }
 .topNavBar nav{
     float:right;
@@ -39,31 +93,54 @@ body{
     color:#9a9da2;
     margin-left:4px;
 }
-.topNavBar nav ul{
+.topNavBar nav> ul{
     list-style: none;
     margin: 0;
     padding: 0;
 }
-a{
-    text-decoration: none;
-}
-.topNavBar nav ul li{
+.topNavBar nav ul li.menu{
     float:left;
     margin-left: 17px;
     margin-right: 17px;
+    position: relative;
 }
-.topNavBar nav ul li a{
+.topNavBar nav ul li.menu a{
     display:block;
     font-size: 12px;
     font-weight: bold;
-    color: #b7b7b7;
-    border-top:3px solid transparent;
-    border-bottom:3px solid transparent;
+    color: inherit;
     padding-top: 5px;
     padding-bottom: 5px;
 }
-.topNavBar nav ul li a:hover{
-    border-bottom:3px solid #e06567;
+.topNavBar nav ul li.menu a::after{
+    content:'';
+    display:block;
+    height:3px;
+    width:100%;
+    background-color: #e6686a; 
+    display:none;
+}
+.topNavBar nav ul li.menu.active a::after{
+    display:block;
+    animation: menu-slide 0.3s;
+}
+@keyframes menu-slide{
+    0%{width:0%}
+    100%{width:100%}
+}
+.topNavBar ul.subMenu{
+    padding-top:5px;
+    position: absolute;
+    top:100%;
+    left:0;
+    display:none;
+}
+.topNavBar ul.subMenu li{
+    white-space: nowrap;
+    
+}
+.topNavBar ul.subMenu.active{
+    display:block;
 }
 .banner{
     height:515px;

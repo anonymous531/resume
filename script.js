@@ -12,4 +12,30 @@ window.onload = function(){
     pLabel3.onclick = function(){
         portfolioBarInner.className = 'portfolioBar-inner-3';
     }
+
+    var topNavBarInner = this.document.getElementById('topNavBarInner');
+    window.onscroll = function(){
+        if(window.scrollY>0){
+            topNavBarInner.classList.add('active')
+        }else{
+            topNavBarInner.classList.remove('active')
+        }
+    }
+
+    let menu = document.getElementsByClassName('menu')
+    for(let i=0;i<menu.length;i++){
+        menu[i].onmouseenter = function(){
+            this.classList.add('active')
+            var subMenu = this.getElementsByClassName('subMenu')[0]
+            subMenu.classList.add('active')
+            
+        }
+        menu[i].onmouseleave = function(){
+            this.classList.remove('active')
+            var subMenu = this.getElementsByTagName('subMenu')[0]
+            subMenu.classList.remove('active')
+        }
+    }
+    
+   
 }

@@ -15,36 +15,45 @@
            fill: currentColor;
            overflow: hidden;
         }
+        
     </style>
 </head>
 <body>
+    <div class="siteWelcome active" id="siteWelcome">
+        <div class="loading"></div>
+    </div>
     <div class="topNavBar">
-        <div class="topNavBar-inner clearfix">
+        <div class="topNavBar-inner clearfix" id="topNavBarInner">
             <a href="#" class="logo" alt="logo">
                     <span class="rs">RS</span><span class="card">card</span>
             </a>
             <nav>
                 <ul class="clearfix">
-                    <li>
+                    <li class="menu">
                         <a href="#">关于</a>
                     </li>
-                    <li>
-                        <a href="">技能</a>
+                    <li class="menu">
+                        <a href="#">技能</a>
                     </li>
-                    <li>
-                        <a href="">作品</a>
+                    <li class="menu">
+                        <a href="#">作品</a>
+                        <ul class="subMenu">
+                            <li>作品1</li>
+                            <li>作品2</li>
+                            <li>作品3</li>
+                        </ul>
                     </li>
-                    <li>
-                        <a href="">博客</a>
+                    <li class="menu">
+                        <a href="#">博客</a>
                     </li>
-                    <li>
-                        <a href="">日历</a>
+                    <li class="menu">
+                        <a href="#">日历</a>
                     </li>
-                    <li>
-                        <a href="">联系方式</a>
+                    <li class="menu">
+                        <a href="#">联系方式</a>
                     </li>
-                    <li>
-                        <a href="">其他</a>
+                    <li class="menu">
+                        <a href="#">其他</a>
                     </li>
                 </ul>
             </nav>
@@ -179,6 +188,10 @@
     </section>
 
     <div class="leaveBlank"></div>
-    
+    <script>
+        setTimeout(function(){
+            siteWelcome.classList.remove("active")
+        },1000)
+    </script>
 </body>
 </html>
