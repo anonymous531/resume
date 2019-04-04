@@ -27,15 +27,28 @@ window.onload = function(){
         menu[i].onmouseenter = function(){
             this.classList.add('active')
             var subMenu = this.getElementsByClassName('subMenu')[0]
-            subMenu.classList.add('active')
-            
+            if(subMenu){
+                subMenu.classList.add('active')
+            }   
         }
         menu[i].onmouseleave = function(){
             this.classList.remove('active')
-            var subMenu = this.getElementsByTagName('subMenu')[0]
-            subMenu.classList.remove('active')
+            var subMenu = this.getElementsByClassName('subMenu')[0]
+            if(subMenu){
+                subMenu.classList.remove('active')
+            }
         }
     }
-    
+
+    let aTag = document.querySelectorAll('nav>ul>li.menu>a')
+    for(var i=0;i<aTag.length;i++){
+        aTag[i].onclick = function(x){
+            x.preventDefault();
+            let href = this.getAttribute('href')
+            let element = document.querySelector(href)
+            let top = element.offsetTop
+            window.scrollTo(0,top-60)
+        }
+    }
    
 }
