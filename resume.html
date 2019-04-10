@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="./style.css">
     <script src="//at.alicdn.com/t/font_1053467_t60ucztu8u.js"></script>
     <script src="./script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tween.js/17.3.0/Tween.min.js"></script>
     <style type="text/css">
         .icon {
            width: 1em; height: 1em;
@@ -68,7 +69,7 @@
         <div class="mask"></div>
     </div>
     <main>
-        <div class="userCard" id="siteAbout">
+        <div data-x class="userCard" id="siteAbout">
             <div class="pictureAndText clearfix">
                 <div class="picture">
                     <img src="./img/avatar.jpg" alt="头像">
@@ -96,7 +97,6 @@
                         <dt>电话</dt>
                         <dd>13488888888</dd>
                     </dl>
-
                 </div>
             </div>
             <footer class="media">
@@ -126,12 +126,12 @@
             <a href="#" class="downloadPdf" download>下 载 PDF 文 档</a>
         </div>
         <div class="selfIntroduction">
-            <p class="selfIntroductionText"> 我是唐静如。目前在饥人谷学习前端知识，希望以后能找一份关于前端的工作。
+            <p class="selfIntroductionText"> 我是唐静如。目前在学习前端知识，希望以后能找一份关于前端的工作。
                 <br>一步一步，做大做强，再创辉煌！
             </p>
         </div> 
     </main>
-    <section class="skills" id="siteSkills">
+    <section data-x class="skills" id="siteSkills">
         <h2>专 业 技 能</h2>
         <div class="sectionBox clearfix">
             <div class="skillIterm">HTML 5 & CSS 3
@@ -167,7 +167,7 @@
             
         </div>
     </section>
-    <section class="portfolio" id="siteWorks">
+    <section data-x class="portfolio" id="siteWorks">
         <h2>作 品 集</h2>
         <div class="label">
             <ol>

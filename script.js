@@ -13,6 +13,10 @@ window.onload = function(){
         portfolioBarInner.className = 'portfolioBar-inner-3';
     }
 
+    let specialTags = document.querySelectorAll('[data-x]')
+    for(let i=0;i<specialTags.length;i++){
+        specialTags[i].classList.add('offset')
+    }
     var topNavBarInner = this.document.getElementById('topNavBarInner');
     window.onscroll = function(){
         if(window.scrollY>0){
@@ -20,6 +24,23 @@ window.onload = function(){
         }else{
             topNavBarInner.classList.remove('active')
         }
+
+        let specialTags = document.querySelectorAll('[data-x]')
+        let minIndex = 0
+        for(var i=0;i<specialTags.length;i++){
+            if(Math.abs(specialTags[i].offsetTop - window.scrollY) < Math.abs(specialTags[minIndex].offsetTop - window.scrollY)){
+                minIndex = i
+            }
+        }
+        specialTags[minIndex].classList.remove('offset')
+        let id = specialTags[minIndex].id
+        let a = document.querySelector('a[href="#'+ id +'"]')  //a[href = "#siteAbout"]
+        let allA = this.document.querySelectorAll('.topNavBar nav ul li.menu>a')
+        for(var i=0;i<allA.length;i++){
+            allA[i].classList.remove('highlight')
+        }
+        a.classList.add('highlight')
+        
     }
 
     let menu = document.getElementsByClassName('menu')
@@ -47,8 +68,26 @@ window.onload = function(){
             let href = this.getAttribute('href')
             let element = document.querySelector(href)
             let top = element.offsetTop
-            window.scrollTo(0,top-60)
+            let currentTop = window.scrollY
+            let targetTop = top -60
+            let s = targetTop  - currentTop
+            var coords = { y: currentTop}
+            var t = Math.abs((s/100)*300)       //每300毫秒走100px
+            if ( t>800 ){ t = 800 }
+            var tween = new TWEEN.Tween(coords)
+                .to( { y:targetTop }, t)
+                .easing(TWEEN.Easing.Quadratic.InOut)
+                .onUpdate(function(){
+                    window.scrollTo(0,coords.y)
+                })
+            .start()
         }
     }
+
+    function animate(time) {
+        requestAnimationFrame(animate);
+        TWEEN.update(time);
+    }
+    requestAnimationFrame(animate);
    
 }
