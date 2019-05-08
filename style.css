@@ -10,7 +10,7 @@ body{
 a{
     text-decoration: none;
 }
-ul{list-style: none;}
+ul,ol{list-style: none;}
 .clearfix::after{
     content:'';
     display:block;
@@ -277,7 +277,7 @@ body,html{height:100%}
     text-align: center;
     padding-top:70px;
 }
-.skills h2{
+.skills h2,.message h2{
     color:#3d4451;
     font-size: 34px;
     margin-bottom: 25px;
@@ -408,6 +408,24 @@ body,html{height:100%}
     bottom:0;
     right:0;
 }
+
+.message { 
+    max-width: 940px;
+    margin:0 auto;
+    text-align: center;
+}
+.message ol{
+    border-top:1px solid #ccc;
+    margin-bottom: 20px;
+}
+.message ol>li{
+    border-bottom:1px solid #ccc;
+    height:50px;
+    text-align:left;
+    padding-left:10px;
+    line-height:50px;
+}
+
 
 .leaveBlank{
     height:200px;

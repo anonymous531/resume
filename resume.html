@@ -9,6 +9,9 @@
     <script src="//at.alicdn.com/t/font_1053467_t60ucztu8u.js"></script>
     <script src="./script.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tween.js/17.3.0/Tween.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.1.0/css/swiper.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.1.0/js/swiper.min.js"></script>
+
     <style type="text/css">
         .icon {
            width: 1em; height: 1em;
@@ -17,6 +20,23 @@
            overflow: hidden;
         }
         
+        .swiper-container {
+        width: 668px;
+        height: 501px;
+        }  
+        .swiper-button-next,.swiper-button-prev{
+            width: 60px;
+            height:60px;
+            background-color: rgba(255,255,255,0.5);
+            border-radius: 50%;
+            left:88%;
+            right:auto;
+        }
+        .swiper-button-prev{
+            right:88%;
+            left:auto;
+        }
+
     </style>
 </head>
 <body>
@@ -179,17 +199,30 @@
                 <div class="portfolioBar-inner-1" id='portfolioBar-inner'></div>
             </div>
         </div>
-        <div class="picture">
-            <div class="book">
-                <img src="./img/portfolio1.jpg" alt="作品1">
+
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <img src="./img/canvas.jpg" alt="canvas" class="swiper-slide">
+                <img src="./img/keyboard.jpg" alt="keyboard" class="swiper-slide">
+                <img src="./img/apple-style-slide.jpg" alt="apple-style-slide" class="swiper-slide">
             </div>
-            <div class="watch">
-                <img src="./img/portfolio2.jpg" alt="作品2">
-            </div>
-            <div class="keyboard">
-                <img src="./img/portfolio3.jpg" alt="作品3">
-            </div>
+            <!-- 如果需要分页器 -->
+            <div class="swiper-pagination"></div>
         </div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+    </section>
+
+    <section data-x id="message" class="message">
+        <h2>留言</h2>
+        <form action="" id="postMessageForm">
+            <ol id="messageList"></ol>
+            <label for="">姓名：</label>
+            <input type="text" name="name">
+            <label for="">内容：</label>
+            <input type="text" name="content">
+            <input type="submit" value="提交">
+        </form>
     </section>
 
     <div class="leaveBlank"></div>
@@ -198,5 +231,30 @@
             siteWelcome.classList.remove("active")
         },1000)
     </script>
+
+<script>        
+    var mySwiper = new Swiper ('.swiper-container', {
+      loop: true, // 循环模式选项
+      
+      // 如果需要分页器
+      pagination: {
+        el: '.swiper-pagination',
+      },
+      
+      // 如果需要前进后退按钮
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+      
+      // 如果需要滚动条
+      scrollbar: {
+        el: '.swiper-scrollbar',
+      },
+    })        
+    </script>
+
+    <script src="//cdn.jsdelivr.net/npm/leancloud-storage@3.13.0/dist/av-min.js"></script>
+    <script src="./message.js"></script>
 </body>
 </html>
