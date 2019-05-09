@@ -7,19 +7,11 @@
     <title>resume</title>
     <link rel="stylesheet" href="./style.css">
     <script src="//at.alicdn.com/t/font_1053467_t60ucztu8u.js"></script>
-    <script src="./script.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tween.js/17.3.0/Tween.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.1.0/css/swiper.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.1.0/js/swiper.min.js"></script>
 
     <style type="text/css">
-        .icon {
-           width: 1em; height: 1em;
-           vertical-align: -0.15em;
-           fill: currentColor;
-           overflow: hidden;
-        }
-        
         .swiper-container {
         width: 668px;
         height: 501px;
@@ -36,7 +28,6 @@
             right:88%;
             left:auto;
         }
-
     </style>
 </head>
 <body>
@@ -65,7 +56,7 @@
                         </ul>
                     </li>
                     <li class="menu">
-                        <a href="#siteBlog">博客</a>
+                        <a href="#siteMessage">留言</a>
                         <ul class="subMenu">
                             <li>博客1</li>
                             <li>博客2</li>
@@ -189,31 +180,23 @@
     </section>
     <section data-x class="portfolio" id="siteWorks">
         <h2>作 品 集</h2>
-        <div class="label">
-            <ol>
-                <li id='pLabel1'>所有</li>
-                <li id='pLabel2'>框架</li>
-                <li id='pLabel3'>原生CSS&JS</li>
-            </ol>
-            <div class="portfolioBar">
-                <div class="portfolioBar-inner-1" id='portfolioBar-inner'></div>
-            </div>
-        </div>
 
-        <div class="swiper-container">
-            <div class="swiper-wrapper">
-                <img src="./img/canvas.jpg" alt="canvas" class="swiper-slide">
-                <img src="./img/keyboard.jpg" alt="keyboard" class="swiper-slide">
-                <img src="./img/apple-style-slide.jpg" alt="apple-style-slide" class="swiper-slide">
+        <div id="mySlides">
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    <img src="./img/canvas.jpg" alt="canvas" class="swiper-slide">
+                    <img src="./img/keyboard.jpg" alt="keyboard" class="swiper-slide">
+                    <img src="./img/apple-style-slide.jpg" alt="apple-style-slide" class="swiper-slide">
+                </div>
+                <!-- 如果需要分页器 -->
+                <div class="swiper-pagination"></div>
             </div>
-            <!-- 如果需要分页器 -->
-            <div class="swiper-pagination"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
         </div>
-        <div class="swiper-button-prev"></div>
-        <div class="swiper-button-next"></div>
     </section>
 
-    <section data-x id="message" class="message">
+    <section  id="message" class="message">
         <h2>留言</h2>
         <form action="" id="postMessageForm">
             <ol id="messageList"></ol>
@@ -232,29 +215,12 @@
         },1000)
     </script>
 
-<script>        
-    var mySwiper = new Swiper ('.swiper-container', {
-      loop: true, // 循环模式选项
-      
-      // 如果需要分页器
-      pagination: {
-        el: '.swiper-pagination',
-      },
-      
-      // 如果需要前进后退按钮
-      navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-      },
-      
-      // 如果需要滚动条
-      scrollbar: {
-        el: '.swiper-scrollbar',
-      },
-    })        
-    </script>
-
     <script src="//cdn.jsdelivr.net/npm/leancloud-storage@3.13.0/dist/av-min.js"></script>
-    <script src="./message.js"></script>
+    <script src="./js/menu-active.js"></script>
+    <script src="./js/init-swiper.js"></script>
+    <script src="./js/sticky-topbar.js"></script>
+    <script src="./js/auto-slide-up.js"></script>
+    <script src="./js/smoothly-navigation.js"></script>
+    <script src="./js/message.js"></script>
 </body>
 </html>

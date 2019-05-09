@@ -16,6 +16,13 @@ ul,ol{list-style: none;}
     display:block;
     clear:both;
 }
+.icon {
+    width: 1em; height: 1em;
+    vertical-align: -0.15em;
+    fill: currentColor;
+    overflow: hidden;
+ }
+ 
 body,html{height:100%}
 .siteWelcome{
     position:fixed;
@@ -327,88 +334,6 @@ body,html{height:100%}
     font-size: 34px;
     margin-bottom: 25px;
 }
-.portfolio .label{
-    max-width: 940px;
-    margin:0 auto;
-    margin-bottom: 30px;
-    text-align: center;
-}
-.portfolio ol{
-    display:inline-block;
-    list-style: none;
-}
-.portfolio li{
-    display:inline-block;
-    vertical-align:top;
-    font-weight: 600;
-    cursor: pointer;
-}
-.portfolio > .label > ol > li:nth-child(1){
-    padding-right:20px;
-    margin-right:20px;
-}
-.portfolio > .label > ol > li:nth-child(2){
-    padding:0 20px;
-    margin-right:20px;
-}
-.portfolio > .label > ol > li:nth-child(3){
-    padding-left: 20px;   
-}
-.portfolio .portfolioBar{
-    height:5px;
-    width:300px;
-    background-color: #fff;
-    border-radius: 2px;
-    margin:10px auto 0;
-}
-.portfolio .portfolioBar-inner-1{
-    height:5px;
-    width:15%;
-    border-radius: 2px;
-    background-color: #e8676b;
-    margin-left:0px;
-    transition: all 0.3s;
-}
-.portfolio .portfolioBar-inner-2{
-    height:5px;
-    width:26%;
-    border-radius: 2px;
-    background-color: #e8676b;
-    margin-left:27%;
-    transition: all 0.3s;
-}
-.portfolio .portfolioBar-inner-3{
-    height:5px;
-    width:42%;
-    border-radius: 2px;
-    background-color: #e8676b;
-    margin-left:58%;
-    transition: all 0.3s;
-}
-.portfolio .picture{
-    height:580px;
-    position: relative;
-}
-.portfolio .book{
-    padding:0 10px;
-    position: absolute;
-    top:0;
-    left:0;
-}
-.portfolio .watch{
-    padding:0 10px;
-    margin-bottom: 20px;
-    position: absolute;
-    top:0;
-    right:0;
-}
-.portfolio .keyboard{
-    padding:0 10px;
-    position: absolute;
-    bottom:0;
-    right:0;
-}
-
 .message { 
     max-width: 940px;
     margin:0 auto;
@@ -425,8 +350,6 @@ body,html{height:100%}
     padding-left:10px;
     line-height:50px;
 }
-
-
 .leaveBlank{
     height:200px;
 }
