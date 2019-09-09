@@ -8,7 +8,6 @@
             this.aTags = this.view.querySelectorAll('ul>li.menu>a')
             this.initAnimation()
             this.bindEvents()
-            
         },  
         initAnimation:function(){
             function animate(time) {
@@ -19,19 +18,19 @@
         },
         scrollToElement: function(element){
             let top = element.offsetTop
-                    let currentTop = window.scrollY
-                    let targetTop = top -60
-                    let s = targetTop  - currentTop
-                    var coords = { y: currentTop}
-                    var t = Math.abs((s/100)*300)       //每300毫秒走100px
-                    if ( t>800 ){ t = 800 }
-                    var tween = new TWEEN.Tween(coords)
-                    .to( { y:targetTop }, t)
-                    .easing(TWEEN.Easing.Quadratic.InOut)
-                    .onUpdate(function(){
-                        window.scrollTo(0,coords.y)
-                    })
-                    .start()
+            let currentTop = window.scrollY
+            let targetTop = top -60
+            let s = targetTop  - currentTop
+            var coords = { y: currentTop}
+            var t = Math.abs((s/100)*300)       //每300毫秒走100px
+            if ( t>800 ){ t = 800 }
+            var tween = new TWEEN.Tween(coords)
+            .to( { y:targetTop }, t)
+            .easing(TWEEN.Easing.Quadratic.InOut)
+            .onUpdate(function(){
+                window.scrollTo(0,coords.y)
+            })
+            .start()
         },
         bindEvents: function(){
             aTags = this.aTags
@@ -45,7 +44,6 @@
                 }
             }
         },
-        
     }
     controller.init(view)
 
